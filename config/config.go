@@ -10,11 +10,12 @@ import (
 
 type Config struct {
 	Repo struct {
-		ScanPath   string   `yaml:"scanPath"`
-		Readme     []string `yaml:"readme"`
-		MainBranch []string `yaml:"mainBranch"`
-		Ignore     []string `yaml:"ignore,omitempty"`
-		Unlisted   []string `yaml:"unlisted,omitempty"`
+		ScanPath      string   `yaml:"scanPath"`
+		Readme        []string `yaml:"readme"`
+		MainBranch    []string `yaml:"mainBranch"`
+		IgnorePattern []string `yaml:"ignorePattern,omitempty"`
+		Ignore        []string `yaml:"ignore,omitempty"`
+		Unlisted      []string `yaml:"unlisted,omitempty"`
 	} `yaml:"repo"`
 	Dirs struct {
 		Templates string `yaml:"templates"`

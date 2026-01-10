@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
+	"slices"
 	"strings"
 
 	"git.icyphox.sh/legit/git"
@@ -31,18 +33,20 @@ func getDescription(path string) (desc string) {
 }
 
 func (d *deps) isUnlisted(name string) bool {
-	for _, i := range d.c.Repo.Unlisted {
-		if name == i {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(d.c.Repo.Unlisted, name)
 }
 
 func (d *deps) isIgnored(name string) bool {
-	for _, i := range d.c.Repo.Ignore {
-		if name == i {
+	if slices.Contains(d.c.Repo.Ignore, name) {
+		return true
+	}
+	for _, i := range d.c.Repo.IgnorePattern {
+		re, err := regexp.Compile(i)
+		if err != nil {
+			/* Ignore invalid regex patterns */
+		}
+
+		if re.Match([]byte(name)) {
 			return true
 		}
 	}
