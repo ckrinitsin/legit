@@ -1,12 +1,12 @@
 :root {
-  --white: #fff;
-  --light: #f4f4f4;
-  --cyan: #509c93;
-  --light-gray: #eee;
-  --medium-gray: #ddd;
-  --gray: #6a6a6a;
-  --dark: #444;
-  --darker: #222;
+  --white: #2d353b;
+  --light: #343f44;
+  --cyan: #83c092;
+  --light-gray: #3d484d;
+  --medium-gray: #475258;
+  --gray: #859289;
+  --dark: #d3c6aa;
+  --darker: #d3c6aa;
 
   --sans-font: -apple-system, BlinkMacSystemFont, "Inter", "Roboto", "Segoe UI", sans-serif;
   --display-font: -apple-system, BlinkMacSystemFont, "Inter", "Roboto", "Segoe UI", sans-serif;
@@ -16,14 +16,14 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark light;
-    --light: #181818;
-    --cyan: #76c7c0;
-    --light-gray: #333;
-    --medium-gray: #444;
-    --gray: #aaa;
-    --dark: #ddd;
-    --darker: #f4f4f4;
-    --white: #000;
+    --light: #343f44;
+    --cyan: #83c092;
+    --light-gray: #3d484d;
+    --medium-gray: #475258;
+    --gray: #859289;
+    --dark: #d3c6aa;
+    --darker: #d3c6aa;
+    --white: #2d353b;
   }
 }
 
@@ -32,6 +32,7 @@ html {
   -webkit-text-size-adjust: none;
   font-family: var(--sans-font);
   font-weight: 380;
+  color: var(--dark);
 }
 
 pre {
@@ -39,7 +40,7 @@ pre {
 }
 
 ::selection {
-  background: var(--medium-gray);
+  background: #4f5b58;
   opacity: 0.3;
 }
 
@@ -115,7 +116,7 @@ a {
 }
 
 a:hover {
-  border-bottom: 1.5px solid var(--gray);
+  border-bottom: 1.5px solid var(--cyan);
 }
 
 .index {
@@ -229,11 +230,11 @@ a:hover {
 }
 
 .diff-add {
-  color: green;
+  color: #a7c080;
 }
 
 .diff-del {
-  color: red;
+  color: #e67e80;
 }
 
 .diff-noop {
