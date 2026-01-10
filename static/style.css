@@ -1,5 +1,6 @@
 :root {
-  --white: #2d353b;
+  --white: #2b3339;
+  --bg2: #e9dfc2;
   --light: #343f44;
   --cyan: #83c092;
   --light-gray: #3d484d;
@@ -7,10 +8,13 @@
   --gray: #859289;
   --dark: #d3c6aa;
   --darker: #d3c6aa;
+  --blue: #3a94c5;
+  --aqua: #35a77c;
+  --green: #8da101;
 
-  --sans-font: -apple-system, BlinkMacSystemFont, "Inter", "Roboto", "Segoe UI", sans-serif;
-  --display-font: -apple-system, BlinkMacSystemFont, "Inter", "Roboto", "Segoe UI", sans-serif;
-  --mono-font: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', 'Roboto Mono', Menlo, Consolas, monospace;
+  --display-font: Arial,  sans-serif;
+  --sans-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mono-font: 'Menlo', 'Monaco', 'Consolas', 'Lucida Console', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,7 +27,11 @@
     --gray: #859289;
     --dark: #d3c6aa;
     --darker: #d3c6aa;
-    --white: #2d353b;
+    --white: #2b3339;
+    --blue: #7fbbb3;
+    --aqua: #83c092;
+    --green: #a7c080;
+    --bg2: #3a454a;
   }
 }
 
@@ -50,6 +58,18 @@ pre {
   margin: 0;
 }
 
+a.nav-link {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 1px;
+}
+
+a.nav-link:hover {
+  color: var(--aqua);
+  border-bottom: 1px solid var(--aqua);
+}
+
 body {
   max-width: 1000px;
   padding: 0 13px;
@@ -66,6 +86,10 @@ header h1, h2, h3 {
   font-family: var(--display-font);
 }
 
+header h1 {
+  color: var(--green);
+}
+
 h2 {
   font-weight: 400;
 }
@@ -74,6 +98,8 @@ h2.index-header {
   font-size: 13px;
   font-weight: 400;
   color: var(--gray);
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--bg2);
 }
 
 strong {
