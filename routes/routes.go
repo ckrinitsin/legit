@@ -107,6 +107,10 @@ func (d *deps) RepoIndex(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if len(commits) >= 1 {
+		commits = commits[:1]
+	}
+
 	var readmeContent template.HTML
 	for _, readme := range d.c.Repo.Readme {
 		ext := filepath.Ext(readme)
@@ -144,8 +148,11 @@ func (d *deps) RepoIndex(w http.ResponseWriter, r *http.Request) {
 	tpath := filepath.Join(d.c.Dirs.Templates, "*")
 	t := template.Must(template.ParseGlob(tpath))
 
-	if len(commits) >= 3 {
-		commits = commits[:3]
+	files, err := gr.FileTree("")
+	if err != nil {
+		d.Write500(w)
+		log.Println(err)
+		return
 	}
 
 	data := make(map[string]any)
@@ -158,6 +165,7 @@ func (d *deps) RepoIndex(w http.ResponseWriter, r *http.Request) {
 	data["servername"] = d.c.Server.Name
 	data["meta"] = d.c.Meta
 	data["gomod"] = isGoModule(gr)
+	data["files"] = files
 
 	if err := t.ExecuteTemplate(w, "repo", data); err != nil {
 		log.Println(err)
