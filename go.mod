@@ -3,7 +3,7 @@ module git.icyphox.sh/legit
 go 1.22.0
 
 require (
-	github.com/alecthomas/chroma/v2 v2.14.0
+	github.com/alecthomas/chroma/v2 v2.22.0
 	github.com/bluekeyes/go-gitdiff v0.8.0
 	github.com/dustin/go-humanize v1.0.1
 	github.com/go-git/go-git/v5 v5.12.0
@@ -20,7 +20,7 @@ require (
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/cloudflare/circl v1.4.0 // indirect
 	github.com/cyphar/filepath-securejoin v0.3.3 // indirect
-	github.com/dlclark/regexp2 v1.11.4 // indirect
+	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
 	github.com/go-git/gcfg v1.5.1-0.20230307220236-3a3c6141e376 // indirect
 	github.com/go-git/go-billy/v5 v5.5.0 // indirect
