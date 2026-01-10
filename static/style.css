@@ -154,7 +154,8 @@ a:hover {
 }
 
 .log {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-template-columns: 20rem minmax(0, 1fr);
   grid-row-gap: 0.3em;
   grid-column-gap: 8rem;
@@ -301,9 +302,15 @@ a:hover {
   color: var(--gray);
 }
 
+.commit-box {
+  background-color: var(--light-gray); /* Light gray background */
+  padding: 12px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px; /* Optional: rounded corners */
+}
+
 .commit-info {
   color: var(--gray);
-  padding-bottom: 1.5rem;
   font-size: 0.85rem;
 }
 
