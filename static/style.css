@@ -70,6 +70,12 @@ h2 {
   font-weight: 400;
 }
 
+h2.index-header {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--gray);
+}
+
 strong {
   font-weight: 500;
 }
